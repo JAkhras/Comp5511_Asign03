@@ -2,19 +2,15 @@
 package comp5511_group02_assign03_bookApps.lib;
 
 
-/**
- *
- * @author aiken
- */
 public class Book implements Comparable<Book>{
     private String isbn;
     private String title;
     private String author;
     private String publisher;
     private String address;
-    private Double price;
+    private String price;
     
-    public Book(String isbn, String title, String author, String publisher, String address,double price) {
+    public Book(String isbn, String title, String author, String publisher, String address,String price) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -81,11 +77,11 @@ public class Book implements Comparable<Book>{
         this.address = address;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
     

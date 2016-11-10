@@ -11,10 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- * @author aiken
- */
+
 public class BookArrayListData implements BookDao{
     
     private ArrayList<Book> bookCatalog = new ArrayList<Book>();

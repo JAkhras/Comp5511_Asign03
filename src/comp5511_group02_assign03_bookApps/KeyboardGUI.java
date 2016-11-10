@@ -40,6 +40,7 @@ public class KeyboardGUI {
         else if(Function.equals("d")){
         System.out.println("Okay let's delete a record! ");
         System.out.println("What would you like to delete?");
+        // System.out.println("May I recommend ISBN: "+ );
         System.out.println("Please Type ISBN");
         String ISBN = Type.nextLine();
         //What if the value is not in the book?
