@@ -1,4 +1,3 @@
-
 package comp5511_group02_assign03_bookApps;
 
 
@@ -13,12 +12,16 @@ public class KeyboardGUI {
      BookDao bookDao = new BookArrayListData();
      
     public void GUI(){
+         System.out.println(bookDao.listBooks());
         Scanner Type = new Scanner(System.in);
+        String Function = "";        
+        
+        while(!Function.equals("e")) {
+        
         System.out.println("Please type first letter of your desired function ");
-        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 's' for searching");
-        String Function = Type.nextLine();
-        //while (Function.equals("a"))
-               
+        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 's' for searching, 'e' for exit");
+        Function = Type.nextLine();
+                        
         if(Function.equals("a")){
         System.out.println("Okay let's add a record! ");
         System.out.println("What would you like to add?");
@@ -36,6 +39,7 @@ public class KeyboardGUI {
         String PRICE = Type.nextLine();
         bookDao.addBook(ISBN, TITLE,AUTHOR,PUBLISHER,ADDRESS, PRICE);
         System.out.println(bookDao.listBooks());
+        System.out.println("You have Added:   " + ISBN);
         }
         else if(Function.equals("d")){
         System.out.println("Okay let's delete a record! ");
@@ -47,6 +51,7 @@ public class KeyboardGUI {
         //could run a search first
         bookDao.deleteBook(ISBN);
         System.out.println(bookDao.listBooks());
+        System.out.println("You have deleted:   " + ISBN);
         }
        
         else if(Function.equals("u")){
@@ -66,6 +71,12 @@ public class KeyboardGUI {
         String PRICE = Type.nextLine();
         bookDao.updateBook(ISBN, TITLE,AUTHOR,PUBLISHER,ADDRESS, PRICE);
         System.out.println(bookDao.listBooks());
+        System.out.println("You have Updated:   " + ISBN);
+        }
+        
+        else if(Function.equals("e")) {
+            System.out.println("Program Terminated");
+            break;
         }
          
         else if(Function.equals("s")){
@@ -77,7 +88,7 @@ public class KeyboardGUI {
         System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
         
         String Category = Type.nextLine();
-       
+        System.out.println(bookDao.listBooks());
         if(Category.equals("is")){
          Book book = bookDao.fetchIsbn(ISBN);
         System.out.println(book.getIsbn());
@@ -104,12 +115,14 @@ public class KeyboardGUI {
            Book book = bookDao.fetchIsbn(ISBN);
             System.out.println(book.getPrice());
         }
-        System.out.println(bookDao.listBooks());
+       
         }
          
         else
         { System.out.println("You have not entered a valid letter!");
-          System.out.println("Program Terminated");}
+
+        }
           
          }
+    }
 }
