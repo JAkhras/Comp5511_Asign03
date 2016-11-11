@@ -39,8 +39,8 @@ public class DATA
                       buffer.write("ISBN;Title;Author;Publisher;Address;Price;");
                       buffer.newLine();
 	              for (int i = 0 ; i<1000 ; i++){
-	            	  buffer.write(randIsbn()+" ; " + randTitle() + " " + randTitle() + " " + randTitle() + " ; "  + randTitle() + " ; " +
-	            			  randTitle() + " LLC" + " ; " + randTitle() + " QC ,CANADA " + " ; " + randPrice() + " $ ;");
+	            	  buffer.write(randIsbn()+";" + randTitle() + "" + randTitle() + "" + randTitle() + ";"  + randTitle() + ";" +
+	            			  randTitle() + "LLC" + ";" + randTitle() + "QC ,CANADA" + ";" + randPrice() + "$;");
 	            	  buffer.newLine();
 	            	  
 	              }
@@ -54,7 +54,7 @@ public class DATA
 	              e.printStackTrace();
 
 	          }
-
+               
 	     }
 	     
 	     public static String randIsbn (){
