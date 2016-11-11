@@ -2,6 +2,11 @@
 package comp5511_group02_assign03_bookApps.lib;
 
 
+
+/**
+ *
+ * @author aiken
+ */
 public class Book implements Comparable<Book>{
     private String isbn;
     private String title;
@@ -24,10 +29,9 @@ public class Book implements Comparable<Book>{
      * @param isbn 
      */
     public Book(String isbn) {
-        this.isbn = isbn;
+        this.isbn = isbn;;
     }
 
-    
     public Book(Book book) {
         this.isbn = book.getIsbn();
         this.title = book.getTitle();
@@ -96,7 +100,7 @@ public class Book implements Comparable<Book>{
         }
         return isbnCode.getIsbn().equals(getIsbn());
     }
-    
+         
     //Returning records of the Book and displaying on console
     public String toString() {
         StringBuilder book_sb = new StringBuilder();
@@ -114,6 +118,20 @@ public class Book implements Comparable<Book>{
         book_sb.append(getPrice());
         return book_sb.toString();
     }
+    //Returning records of the Book and displaying on console
+    public String toIsbn() {
+        StringBuilder book_isbn_sb = new StringBuilder();
+        book_isbn_sb.append(getIsbn());
+        return book_isbn_sb.toString();
+    }
+    
+    //Returning title of the Book and displaying on console
+    public String bookTitle() {
+        StringBuilder book_title_sb = new StringBuilder();
+        book_title_sb.append(getTitle());
+        return book_title_sb.toString();
+    }
+    
     /**
      * this method is used in sort and binary search
      * @param isbnCode

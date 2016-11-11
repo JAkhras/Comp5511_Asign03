@@ -14,8 +14,9 @@ import comp5511_group02_assign03_bookApps.lib.Book;
 public interface BookReader {
     
     Book fetchIsbn(String isbn);
-
+    Book fetchTitle(String title);
     int getTotalBookAmount();
+    
     
     public String listBooks(); 
 }

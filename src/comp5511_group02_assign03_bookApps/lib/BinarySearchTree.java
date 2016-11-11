@@ -71,8 +71,8 @@ public class BinarySearchTree {
                 else
                     runner = runner.right;
             }
-        } // end while
-    }  // end treeInsert()
+        } 
+    } 
 
     /**
      * Return true if item is one of the items in the binary sort tree to which
@@ -92,29 +92,5 @@ public class BinarySearchTree {
             // If the item occurs, it must be in the right subtree.
             return treeContains(root.right, item);
         }
-    }  // end treeContains()
-//    /**
-//     * Print the items in the tree in inorder, one item to a line.  
-//     * Since the tree is a sort tree, the output will be in increasing order.
-//     */
-//    public static String treeList(TreeNode node) {
-//        if ( node != null ) {
-//            treeList(node.left);             // Print items in left subtree.
-//            
-//            treeList(node.right);            // Print items in the right subtree.
-//        }
-//        return node.item;  // Print item in the node.
-//    } // end treeList()
-//    /**
-//     * Print the items in the tree in inorder, one item to a line.  
-//     * Since the tree is a sort tree, the output will be in increasing order.
-//     */
-//    public static int titleIndexCount(TreeNode node,String item) {
-//        int titleIndex=0;
-//        if ( node.item != item ) {
-//            titleIndex++;
-//        }
-//        return titleIndex;
-//    } // end treeList()
-
+    }  
 }

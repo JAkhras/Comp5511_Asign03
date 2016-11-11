@@ -20,7 +20,7 @@ public class KeyboardGUI {
         
         while(!Function.equals("e")) {
         System.out.println("Please type first letter of your desired function ");
-        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 's' for searching, 'e' for exit");
+        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 'is' for searching by ISBN, it for searching by Title, 'e' for exit");
         Function = Type.nextLine();
                         
         if(Function.equals("a")){
@@ -86,14 +86,14 @@ public class KeyboardGUI {
             break;
         }
          
-        else if(Function.equals("s")){
+        else if(Function.equals("is")){
         System.out.println("Okay let's search for a record! ");
         System.out.println("Which record would you like to search for?");
         System.out.println("Please Type ISBN of the record you want to look for");
         String ISBN = Type.nextLine();
         System.out.println("Now please choose the category you would like for: " + ISBN);
         System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
-        
+
         String Category = Type.nextLine();
         bookDao.sortCatalog();
         System.out.println(bookDao.listBooks());
@@ -129,6 +129,51 @@ public class KeyboardGUI {
        
         }
          
+        else if(Function.equals("it")){
+        System.out.println("Okay let's search for a record! ");
+        System.out.println("Which record would you like to search for?");
+        System.out.println("Please Type Title of the record you want to look for");
+        String Title = Type.nextLine();
+        System.out.println("Now please choose the category you would like for: " + Title);
+        System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
+
+        String Category = Type.nextLine();
+        bookDao.sortCatalog();
+        System.out.println(bookDao.listBooks());
+        System.out.println("Heap-Sorted book list is represented above");
+        
+        if(Category.equals("is")){
+         Book book = bookDao.fetchIsbn(Title);
+        System.out.println("isbn for your search is: "+book.getIsbn());
+         
+            
+        }
+        else if(Category.equals("ti")){
+         Book book = bookDao.fetchIsbn(Title);
+         System.out.println("Title for your search is: "+book.getTitle());
+            
+        }
+        else  if(Category.equals("au")){
+            Book book = bookDao.fetchIsbn(Title);
+            System.out.println("Author name for your search is: "+book.getAuthor());
+        }
+        else if(Category.equals("pu")){
+         Book book = bookDao.fetchIsbn(Title);
+        System.out.println("Publisher Name for your search is: "+book.getPublisher());
+        }
+        else if(Category.equals("ad")){
+            Book book = bookDao.fetchIsbn(Title);
+            System.out.println("Address for your search is: "+book.getAddress());
+        }
+        else if(Category.equals("pr")){
+           Book book = bookDao.fetchIsbn(Title);
+            System.out.println("Price for your search is: "+book.getPrice());
+        }
+       
+        }
+        
+        
+        
         else
         { System.out.println("You have not entered a valid letter!");
 
