@@ -1,8 +1,5 @@
 package comp5511_group02_assign03_bookApps;
 
-
-
-
 import comp5511_group02_assign03_bookApps.dao.BookArrayListData;
 import comp5511_group02_assign03_bookApps.dao.BookDao;
 import comp5511_group02_assign03_bookApps.lib.Book;
@@ -14,11 +11,12 @@ public class KeyboardGUI {
     public void GUI(){
        
         bookDao.sortCatalog();
-        
+        System.out.println(bookDao.listBooks());
+        System.out.println("Heap-Sorted book list is represented above");
         Scanner Type = new Scanner(System.in);
         
         System.out.println("Please type first letter of your desired function ");
-        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 'is' for searching by ISBN, it for searching by Title, 'e' for exit");
+        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 'si' for searching by ISBN, 'st' for searching by Title, 'e' for exit");
         String Function = Type.nextLine();
                       
         if(Function.equals("a")){
@@ -44,8 +42,7 @@ public class KeyboardGUI {
         }
         
         //else
-        if(Function.equals("d")){
-        System.out.println(bookDao.listBooks());
+        else if(Function.equals("d")){
         System.out.println("Okay let's delete a record! ");
         System.out.println("What would you like to delete?");
       
@@ -84,18 +81,15 @@ public class KeyboardGUI {
         
        
            
-        else if(Function.equals("is")){
+        else if(Function.equals("si")){
         System.out.println("Okay let's search for a record! ");
         System.out.println("Which record would you like to search for?");
         System.out.println("Please Type ISBN of the record you want to look for");
         String ISBN = Type.nextLine();
         System.out.println("Now please choose the category you would like for: " + ISBN);
         System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
-
         String Category = Type.nextLine();
-        bookDao.sortCatalog();
-        System.out.println(bookDao.listBooks());
-        System.out.println("Heap-Sorted book list is represented above");
+       
         
         if(Category.equals("is")){
          Book book = bookDao.fetchIsbn(ISBN);
@@ -106,7 +100,6 @@ public class KeyboardGUI {
         else if(Category.equals("ti")){
             
          Book book = bookDao.fetchIsbn(ISBN);
-         
          System.out.println("Title for your search is: "+book.getTitle());
             
         }
@@ -129,7 +122,7 @@ public class KeyboardGUI {
        
         }
         
-        else if(Function.equals("it")){
+        else if(Function.equals("st")){
         System.out.println("Okay let's search for a record! ");
         System.out.println("Which record would you like to search for?");
         System.out.println("Please Type Title of the record you want to look for");
@@ -138,15 +131,12 @@ public class KeyboardGUI {
         System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
 
         String Category = Type.nextLine();
-        bookDao.sortCatalog();
-        System.out.println(bookDao.listBooks());
-        System.out.println("Heap-Sorted book list is represented above");
+        
         
         if(Category.equals("is")){
-       Book bookTitle = bookDao.fetchTitle(Title);
+        Book bookTitle = bookDao.fetchTitle(Title);
+        
         System.out.println("isbn for your search is: "+ bookTitle.getIsbn());
-         
-            
         }
         else if(Category.equals("ti")){
         Book bookTitle = bookDao.fetchTitle(Title);
@@ -171,16 +161,8 @@ public class KeyboardGUI {
         }
        
         }
-        
-        
-      
         else
         { System.out.println("You have not entered a valid letter!");}
-    
-    //}
-        
-        
-        
-        
+             
     }
 }
