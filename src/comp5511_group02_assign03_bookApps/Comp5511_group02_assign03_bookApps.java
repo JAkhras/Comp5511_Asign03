@@ -1,6 +1,7 @@
 
 package comp5511_group02_assign03_bookApps;
 
+
 public class Comp5511_group02_assign03_bookApps {
     
     public static void main(String[] args) {
@@ -10,7 +11,8 @@ public class Comp5511_group02_assign03_bookApps {
        
        //Run User Interface
        KeyboardGUI GUI = new KeyboardGUI();
-       GUI.GUI();  
+       GUI.GUI(); 
+       
     }
     
 }

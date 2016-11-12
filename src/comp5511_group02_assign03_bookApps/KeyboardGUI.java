@@ -16,7 +16,7 @@ public class KeyboardGUI {
         Scanner Type = new Scanner(System.in);
         
         System.out.println("Please type first letter of your desired function ");
-        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 'si' for searching by ISBN, 'st' for searching by Title, 'e' for exit");
+        System.out.println("'a' for adding, 'd' for deleting, 'u' for update, 'si' for searching by ISBN, 'st' for searching by Title");
         String Function = Type.nextLine();
                       
         if(Function.equals("a")){
@@ -87,7 +87,7 @@ public class KeyboardGUI {
         System.out.println("Please Type ISBN of the record you want to look for");
         String ISBN = Type.nextLine();
         System.out.println("Now please choose the category you would like for: " + ISBN);
-        System.out.println("For ISBN type is, for Title type ti, for Author type au, for Publisher type pu, for Address type ad, for Price type pr");
+        System.out.println("For ISBN type 'is', for Title type 'ti', for Author type 'au', for Publisher type 'pu', for Address type 'ad', for Price type 'pr' ");
         String Category = Type.nextLine();
        
         

@@ -13,6 +13,7 @@ import static java.lang.Math.toIntExact;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -27,9 +28,16 @@ public class BookArrayListData implements BookDao {
      */
     public BookArrayListData() {
         try {
-            String path = "/Users/John/NetBeansProjects/Comp5511_Asign03/";
-            // create recordInput for inputing records
-            File inputFile = new File(path + "ISBN.txt");
+
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            int result = fileChooser.showOpenDialog(fileChooser);
+            if (result == JFileChooser.APPROVE_OPTION) {
+                File inputFile = fileChooser.getSelectedFile();
+                System.out.println("Selected file: " + inputFile.getAbsolutePath());
+            }
+            File inputFile = fileChooser.getSelectedFile();
+
             // A connection stream connects to the text file
             FileReader fileReader = new FileReader(inputFile);
             // A file pointer always points to the text file
