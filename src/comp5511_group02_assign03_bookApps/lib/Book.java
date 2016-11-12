@@ -15,7 +15,7 @@ public class Book implements Comparable<Book>{
     private String address;
     private String price;
     
-    public Book(String isbn, String title, String author, String publisher, String address,String price) {
+    public Book(String isbn, String title, String author, String publisher, String address, String price) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
@@ -29,7 +29,7 @@ public class Book implements Comparable<Book>{
      * @param isbn 
      */
     public Book(String isbn) {
-        this.isbn = isbn;;
+        this.isbn = isbn;
     }
 
     public Book(Book book) {

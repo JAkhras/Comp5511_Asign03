@@ -93,6 +93,8 @@ public class BookArrayListData implements BookDao {
      * @param title
      * @return
      */
+    
+    
     @Override
     public Book fetchTitle(String title) {
         Book book2 = getBookbyTitle(title);
@@ -265,7 +267,9 @@ public class BookArrayListData implements BookDao {
     private boolean validate(Book book) {
         if (book.getTitle().length() > MAX_LENGTH_FOR_BOOK_TITLE
                 || book.getIsbn().length() > MAX_LENGTH_FOR_BOOK_ISBN
-                || book.getPrice().length()< 0) {
+                || book.getPrice().length() < 0
+                ) 
+        {
             return false;
         }
         if (bookCatalog.contains(book)) {
@@ -281,7 +285,7 @@ public class BookArrayListData implements BookDao {
      * @return
      */
     private Book getBook(String isbn) {
-        Collections.sort(bookCatalog, Collections.reverseOrder());
+        //Collections.sort(bookCatalog, Collections.reverseOrder());
         int index = Collections.binarySearch(bookCatalog, new Book(isbn));
         if (index >= 0) {
             return bookCatalog.get(index);
